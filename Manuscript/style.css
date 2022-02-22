@@ -1,0 +1,109 @@
+/* Style */
+
+body {
+  margin-left: 3em;
+  margin-right: 3em;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-size: 110%;
+  background-color: #fffff8;
+  color: #111;
+  max-width: 1400px;
+}
+
+/* Text */
+h1,h2,h3 {
+  text-align: center; /* all headings centered */
+  clear: both;
+}
+
+p {
+  margin-top: .75em;
+  margin-bottom: .75em;
+}
+
+hr {
+  width: 33%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr.chapter {
+  width: 65%;
+}
+
+hr.minor {
+  width: 45%;
+}
+
+.center {
+  text-align: center;
+}
+
+.smcap {
+  font-variant: small-caps;
+}
+
+/* Footnotes */
+.footnote {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 0.9em;
+}
+
+.footnote .label {
+  position: absolute;
+  right: 84%;
+  text-align: right;
+}
+
+.fnanchor {
+  vertical-align: super;
+  font-size: .8em;
+  text-decoration: none;
+}
+
+/* Poetry */
+.poem {
+  margin-left:10%;
+  margin-right:10%;
+  text-align: left;
+}
+
+.poem br {
+  display: none;
+}
+
+.poem .stanza {
+  margin: 1em 0em 1em 0em;
+}
+
+.poem span.i0 {
+  display: block;
+  margin-left: 0em;
+  padding-left: 3em;
+  text-indent: -3em;
+}
+
+/* Edits */
+.auto-translated {
+  text-decoration: underline;
+  background: lightgray;
+  ebackground: greenyellow;
+}
+
+.undecided {
+  background: orange;
+}
+
+.check-case {
+  background: red;
+}
+
+@media print {
+  body {
+    background: none;
+    font-size: 100%;
+  }  
+}
