@@ -17,7 +17,11 @@ as well as the computer program I made to write the book. The whole book is writ
 
 ## This repository
 
+- [Translation files and program](Manuscript/Translations.md)
+- [Project notes](PROJECT.md) — detailed search for a literary agent/publisher, and how to self publish
+- [Copyright research](./Copyright research) — proof that this project is legal
 
+Please note that I am unable to include the actual original Nineteen Eighty-Four text, or the resultant Nineteen Eight-Five output. Because this repository is published from the United States and this title is still under copyright probably forever in USA and Spain. In the rest of the world the copyright ended 2021. If you are in the rest of the world, you are able to use your copy of the book with this program to generate Nineteen Eight-Five. See LICENSE below.
 
 ## License
 
