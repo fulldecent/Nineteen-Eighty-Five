@@ -21,12 +21,13 @@ open my $report_fh, '>', $report_file or die "Could not open $report_file: $!";
 # Read old book, into one line, squash newlines and spaces
 my $book_content = do { local $/; <$old_book_fh> }; # Old book in one string
 $book_content =~ s/\s+/ /g;
+$book_content =~ s/> <p/>\n<p/g;
 close $old_book_fh;
 
 # Start report output for find replace statistics
 print $report_fh "<html><head><title>Find and replace counts</title></head><body>\n";
 print $report_fh "<table border='1'>\n";
-print $report_fh '<tr><th>Find</th><th>Replace</th><th>#</th><th># /i</th><th># \b</th></tr>';
+print $report_fh '<tr><th>Matched</th><th>If case insensitive</th><th>If match full words</th><th>Find</th><th>Replace</th></tr>';
 
 #
 # TODO: still deciding if:
@@ -46,13 +47,17 @@ while (my $line = <$translations_fh>) {
         my $count_original = () = $book_content =~ m@(?<=\W)$original@g;
         my $count_original_i = () = $book_content =~ m@(?<=\W)$original@gi;
         my $count_original_b = () = $book_content =~ m@(?<=\W)$original\b@g;
+        my $extra_i = $count_original_i - $count_original;
+        $extra_i = $extra_i > 0 ? "+$extra_i" : "";
+        my $extra_b = $count_original_b - $count_original;
+        $extra_b = $extra_b < 0 ? "$extra_b" : "";
 
         # Replace
         $book_content =~ s@(?<=\W)$original@$replacement@g;
         
         # Report
         # Assert: $original and $replacement are safe to use in HTML
-        print $report_fh "<tr><td>$original</td><td>$replacement</td><td>$count_original</td><td>$count_original_i</td><td>$count_original_b</td></tr>\n";
+        print $report_fh "<tr><td>$count_original</td><td>$extra_i</td><td>$extra_b</td><td>$original</td><td>$replacement</td></tr>";
     }
 }
 close $translations_fh;

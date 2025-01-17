@@ -11,8 +11,9 @@
 ## How this file works
 
 1. ➡️ Use the `arrow_right` emoji for direct translations.
-2. Add a warning on right  if translating from an uppercase beginning to a lowercase beginning so that it can be uppercased at beginnings of sentences.
-3. Translations happen in order.
+2. Translations start at the beginning of a word. So `ken -> bar` will not match on Chic**ken**.
+3. Add a warning on right  if translating from an uppercase beginning to a lowercase beginning so that it can be uppercased at beginnings of sentences.
+4. Translations happen in order.
 
 ## Technology & products
 
